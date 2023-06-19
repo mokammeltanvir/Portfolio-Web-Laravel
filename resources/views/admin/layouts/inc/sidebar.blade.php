@@ -48,20 +48,19 @@
 
         </ul>
       </li>
-      <li class="menu-header">Starter</li>
+      <li class="menu-header">Sections</li>
 
-      <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>
-      <li><a class="nav-link" href="features-post-create.html"><i class="far fa-square"></i> <span>Form
-            Page</span></a></li>
-
-      <li><a class="nav-link" href="features-profile.html"><i class="far fa-square"></i> <span>Profile</span></a>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+          <span>Hero</span></a>
+        <ul class="dropdown-menu" style="display: none;">
+          <li><a class="nav-link" href="{{ route('admin.hero.index') }}">Hero Banner Title</a></li>
+          <li><a class="nav-link" href="{{ route('admin.typer-title.index') }}">Typing Title</a></li>
+      
+        </ul>
       </li>
 
-      <li><a class="nav-link" href="auth-login.html"><i class="far fa-square"></i> <span>Login</span></a></li>
-      <li><a class="nav-link" href="auth-register.html"><i class="far fa-square"></i> <span>Register</span></a>
-      </li>
-      <li><a class="nav-link" href="auth-forgot-password.html"><i class="far fa-square"></i> <span>Forgot
-            password</span></a></li>
+      {{-- <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>       --}}
 
     </ul>
   </aside>

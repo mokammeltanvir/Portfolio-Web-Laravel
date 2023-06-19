@@ -4,7 +4,7 @@
 @section('content')
 <!-- Banner-Area-Start -->
 <!-- include header -->
-@include('frontend.pages.widgets.header')
+@include('frontend.pages.widgets.hero')
 <!-- Service-Area-Start -->
 @include('frontend.pages.widgets.service')
 <!-- Service-Area-End -->

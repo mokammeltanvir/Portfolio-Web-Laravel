@@ -243,10 +243,7 @@
         $('.navi-trigger').on('click', function () {
             $(this).toggleClass('active');
         });
-        var textOne = "I'm ui/ux designer.",
-            textTwo = "Let's work together.",
-            textThree = "I can create awesome stuff.";
-        $('.header-area .typer-title').typer([textOne, textTwo, textThree]);
+
         // SLIDER
         var menu = [];
         jQuery('.swiper-slide').each(function (index) {

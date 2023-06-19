@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\HeroController;
+use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TyperTitleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.pages.home');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::get('/blog', function () {
     return view('frontend.pages.blog');
 });
@@ -41,3 +43,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' => 'admin.'], function () {
+  /** Hero Route */
+    Route::resource('hero', HeroController::class);
+    Route::resource('typer-title', TyperTitleController::class);
+});
