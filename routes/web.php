@@ -16,8 +16,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.pages.home');
 });
+Route::get('/blog', function () {
+    return view('frontend.pages.blog');
+});
+Route::get('/blog-details', function () {
+    return view('frontend.pages.blog-details');
+});
+Route::get('/portfolio', function () {
+    return view('frontend.pages.portfolio');
+});
+Route::get('/portfolio-details', function () {
+    return view('frontend.pages.portfolio-details');
+});
+
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
