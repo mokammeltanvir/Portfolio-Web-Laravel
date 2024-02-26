@@ -18,7 +18,7 @@
         <!-- Authentication -->
         <form method="POST" action="{{ route('logout') }}">
           @csrf
-        <a href="#" onclick="event.preventDefault(); this.closest('form').submit();" 
+        <a href="#" onclick="event.preventDefault(); this.closest('form').submit();"
         class="dropdown-item has-icon text-danger">
           <i class="fas fa-sign-out-alt"></i> Logout
         </a>
@@ -56,10 +56,11 @@
         <ul class="dropdown-menu" style="display: none;">
           <li><a class="nav-link" href="{{ route('admin.hero.index') }}">Hero Banner Title</a></li>
           <li><a class="nav-link" href="{{ route('admin.typer-title.index') }}">Typing Title</a></li>
-      
+
         </ul>
       </li>
 
+      <li><a class="nav-link" href="{{route('admin.service.index')}}"><i class="far fa-square"></i> <span>Services</span></a></li>
       {{-- <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>       --}}
 
     </ul>
