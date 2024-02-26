@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HeroController;
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Frontend\HomeController;
@@ -52,4 +53,8 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' =>
 
     // ** Service Route */
     Route::resource('service', ServiceController::class);
+
+    /** About Route */
+    Route::get('resume/download', [AboutController::class, 'resumeDownload'])->name('resume.download');
+    Route::resource('about', AboutController::class);
 });
