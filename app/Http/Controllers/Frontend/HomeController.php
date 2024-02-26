@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Hero;
 use App\Models\About;
 use App\Models\Service;
+use App\Models\Category;
 use App\Models\TyperTitle;
 use Illuminate\Http\Request;
+use App\Models\PortfolioItem;
 use App\Http\Controllers\Controller;
+use App\Models\PortfolioSectionSetting;
 
 class HomeController extends Controller
 {
@@ -17,6 +20,15 @@ class HomeController extends Controller
         $typerTitles = TyperTitle::all();
         $services = Service::latest()->take(6)->get();
         $about = About::first();
-        return view('frontend.pages.home' , compact('hero', 'typerTitles', 'services', 'about' ) );
+        $portfolioTitle = PortfolioSectionSetting::first();
+        $portfolioCategories = Category::all();
+        $portfolioItems = PortfolioItem::all();
+        return view('frontend.pages.home' , compact('hero', 'typerTitles', 'services', 'about', 'portfolioTitle', 'portfolioCategories', 'portfolioItems' ) );
+    }
+
+
+    public function showPortfolio($id){
+        $portfolio = PortfolioItem::findOrFail($id);
+        return view('frontend.pages.portfolio-details', compact('portfolio'));
     }
 }
