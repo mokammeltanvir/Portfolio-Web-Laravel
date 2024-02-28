@@ -121,6 +121,23 @@
         </ul>
     </li>
 
+    <li class="nav-item dropdown {{setSidebarActive([
+        'admin.footer-social.*',
+        'admin.footer-info.*',
+        'admin.footer-contact-info.*',
+        'admin.footer-useful-links.*',
+        'admin.footer-help-links.*'
+        ])}}">
+           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Footer</span></a>
+           <ul class="dropdown-menu" style="display: none;">
+             <li class="{{setSidebarActive(['admin.footer-social.*'])}}"><a class="nav-link" href="{{route('admin.footer-social.index')}}">Social Links</a></li>
+             <li class="{{setSidebarActive(['admin.footer-info.*'])}}"><a class="nav-link" href="{{route('admin.footer-info.index')}}">Footer Information</a></li>
+             <li class="{{setSidebarActive(['admin.footer-contact-info.*'])}}"><a class="nav-link" href="{{route('admin.footer-contact-info.index')}}">Footer Contact Info</a></li>
+             <li class="{{setSidebarActive(['admin.footer-useful-links.*'])}}"><a class="nav-link" href="{{route('admin.footer-useful-links.index')}}">Footer Useful Links</a></li>
+             <li class="{{setSidebarActive(['admin.footer-help-links.*'])}}"><a class="nav-link" href="{{route('admin.footer-help-links.index')}}">Footer Help Links</a></li>
+           </ul>
+       </li>
+
       {{-- <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>       --}}
 
     </ul>

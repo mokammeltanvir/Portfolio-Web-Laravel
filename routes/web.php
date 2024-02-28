@@ -12,9 +12,14 @@ use App\Http\Controllers\Admin\FeedbackController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SkillItemController;
 use App\Http\Controllers\Admin\ExperienceController;
+use App\Http\Controllers\Admin\FooterInfoController;
 use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\PortfolioItemController;
+use App\Http\Controllers\Admin\FooterHelpLinkController;
+use App\Http\Controllers\Admin\FooterSocialLinkController;
+use App\Http\Controllers\Admin\FooterUsefulLinkController;
+use App\Http\Controllers\Admin\FooterContactInfoController;
 use App\Http\Controllers\Admin\BlogSectionSettingController;
 use App\Http\Controllers\Admin\SkillSectionSettingController;
 use App\Http\Controllers\Admin\ContactSectionSettingController;
@@ -104,4 +109,19 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' =>
 
     /** Contact Section Setting Route */
     Route::resource('contact-section-setting', ContactSectionSettingController::class);
+
+    /** Footer Social Route */
+    Route::resource('footer-social', FooterSocialLinkController::class);
+
+    /** Footer Info Route */
+    Route::resource('footer-info', FooterInfoController::class);
+
+    /** Footer Contact Info Route */
+    Route::resource('footer-contact-info', FooterContactInfoController::class);
+
+    /** Footer Useful Links Route */
+    Route::resource('footer-useful-links', FooterUsefulLinkController::class);
+
+    /** Footer Help Links Route */
+    Route::resource('footer-help-links', FooterHelpLinkController::class);
 });
