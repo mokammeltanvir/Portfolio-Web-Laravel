@@ -1,3 +1,7 @@
+@php
+    $generalSetting = \App\Models\GeneralSetting::first();
+    $seoSetting = \App\Models\SeoSetting::first();
+@endphp
 <!doctype html>
 <html class="no-js" lang="en">
 

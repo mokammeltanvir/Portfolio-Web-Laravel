@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FeedbackController;
@@ -13,10 +14,12 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SkillItemController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\FooterInfoController;
+use App\Http\Controllers\Admin\SeoSettingController;
 use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\FooterHelpLinkController;
+use App\Http\Controllers\Admin\GeneralSettingController;
 use App\Http\Controllers\Admin\FooterSocialLinkController;
 use App\Http\Controllers\Admin\FooterUsefulLinkController;
 use App\Http\Controllers\Admin\FooterContactInfoController;
@@ -124,4 +127,13 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' =>
 
     /** Footer Help Links Route */
     Route::resource('footer-help-links', FooterHelpLinkController::class);
+
+    /** Settings Route */
+    Route::get('settings', SettingController::class)->name('settings.index');
+
+    /** General setting Route */
+    Route::resource('general-setting', GeneralSettingController::class);
+
+    /** Seo setting Route */
+    Route::resource('seo-setting', SeoSettingController::class);
 });
