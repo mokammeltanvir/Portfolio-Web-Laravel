@@ -7,12 +7,14 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\FeedbackController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SkillItemController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\TyperTitleController;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\SkillSectionSettingController;
+use App\Http\Controllers\Admin\FeedbackSectionSettingController;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 
 /*
@@ -81,4 +83,10 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' =>
 
     /** Skill Items Route */
     Route::resource('experience', ExperienceController::class);
+
+    /** Feedback Route */
+    Route::resource('feedback', FeedbackController::class);
+
+    /** Feedback Section Setting Route */
+    Route::resource('feedback-section-setting', FeedbackSectionSettingController::class);
 });

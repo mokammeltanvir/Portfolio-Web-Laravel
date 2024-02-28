@@ -90,6 +90,17 @@
 
     <li class="{{setSidebarActive(['admin.experience.*'])}}"><a class="nav-link" href="{{route('admin.experience.index')}}"><i class="far fa-square"></i> <span>Experience</span></a></li>
 
+    <li class="nav-item dropdown {{setSidebarActive([
+        'admin.feedback.*',
+        'admin.feedback-section-setting.*',
+        ])}}" >
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Feedback</span></a>
+        <ul class="dropdown-menu" style="display: none;">
+          <li class="{{setSidebarActive(['admin.feedback.*'])}}"><a class="nav-link" href="{{route('admin.feedback.index')}}">Feedbacks</a></li>
+          <li class="{{setSidebarActive(['admin.feedback-section-setting.*'])}}"><a class="nav-link" href="{{route('admin.feedback-section-setting.index')}}">Section Setting</a></li>
+        </ul>
+    </li>
+
       {{-- <li><a class="nav-link" href="blank.html"><i class="far fa-square"></i> <span>Blank Page</span></a></li>       --}}
 
     </ul>
