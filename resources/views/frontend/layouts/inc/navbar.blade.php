@@ -10,28 +10,15 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#home-page">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="#about-page">About</a>
+          <a class="nav-link" href="/portfolio">Portfolio <i class="fas fa-angle-down"></i></a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="#portfolio-page">Portfolio <i class="fas fa-angle-down"></i></a>
-          <ul class="sub_menu">
-            <li><a href="portfolio.html">Portfolio Grid</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills-page">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#blog-page">Blog <i class="fas fa-angle-down"></i></a>
-          <ul class="sub_menu">
-            <li><a href="blog.html">Blog Grid</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact-page">Contact</a>
+          <a class="nav-link" href="{{route('blog')}}">Blog <i class="fas fa-angle-down"></i></a>
         </li>
       </ul>
     </div>

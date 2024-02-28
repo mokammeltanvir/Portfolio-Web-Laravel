@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\HeroController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ProfileController;
@@ -12,7 +13,9 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\SkillItemController;
 use App\Http\Controllers\Admin\ExperienceController;
 use App\Http\Controllers\Admin\TyperTitleController;
+use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\PortfolioItemController;
+use App\Http\Controllers\Admin\BlogSectionSettingController;
 use App\Http\Controllers\Admin\SkillSectionSettingController;
 use App\Http\Controllers\Admin\FeedbackSectionSettingController;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
@@ -32,12 +35,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
 
-Route::get('/blog', function () {
-    return view('frontend.pages.blog');
-});
-Route::get('/blog-details', function () {
-    return view('frontend.pages.blog-details');
-});
+Route::get('blogs', [HomeController::class, 'blog'])->name('blog');
+
+Route::get('blog-details/{id}', [HomeController::class, 'showBlog'])->name('show.blog');
+
+
 Route::get('/portfolio', function () {
     return view('frontend.pages.portfolio');
 });
@@ -89,4 +91,13 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' =>
 
     /** Feedback Section Setting Route */
     Route::resource('feedback-section-setting', FeedbackSectionSettingController::class);
+
+    /** Blog Category Route */
+    Route::resource('blog-category', BlogCategoryController::class);
+
+    /** Blog Route */
+    Route::resource('blog', BlogController::class);
+
+    /** Blog Section Setting Route */
+    Route::resource('blog-section-setting', BlogSectionSettingController::class);
 });

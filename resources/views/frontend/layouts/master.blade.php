@@ -16,12 +16,58 @@
   </div>
 
   <!-- include Navbar -->
-  @include('frontend.layouts.inc.navbar')
+@if(Request::is('/'))
+<nav class="navbar navbar-expand-lg main_menu" id="main_menu_area">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="{{ asset('frontend/assets') }}/images/logo.png" alt="Rabins">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="far fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home-page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about-page">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio-page">Portfolio <i class="fas fa-angle-down"></i></a>
+            <ul class="sub_menu">
+              <li><a href="/portfolio">All Portfolio</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills-page">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#blog-page">Blog <i class="fas fa-angle-down"></i></a>
+            <ul class="sub_menu">
+              <li><a href="{{route('blog')}}">All Blog</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-page">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+@else
+@include('frontend.layouts.inc.navbar')
+@endif
+
+
+
+
 
   <div class="main_wrapper" data-bs-spy="scroll" data-bs-target="#main_menu_area" data-bs-root-margin="0px 0px -40%"
     data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary" tabindex="0">
 
-    @yield('content')    
+    @yield('content')
 
     <!-- Include Footer -->
    @include('frontend.layouts.inc.footer')
