@@ -14,11 +14,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/portfolio">Portfolio <i class="fas fa-angle-down"></i></a>
+          <a class="nav-link" href="{{route('portfolio')}}">Portfolio</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{{route('blog')}}">Blog <i class="fas fa-angle-down"></i></a>
+          <a class="nav-link" href="{{route('blog')}}">Blog</a>
         </li>
       </ul>
     </div>

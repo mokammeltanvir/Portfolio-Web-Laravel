@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\PortfolioItemController;
 use App\Http\Controllers\Admin\BlogSectionSettingController;
 use App\Http\Controllers\Admin\SkillSectionSettingController;
+use App\Http\Controllers\Admin\ContactSectionSettingController;
 use App\Http\Controllers\Admin\FeedbackSectionSettingController;
 use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 
@@ -31,6 +32,7 @@ use App\Http\Controllers\Admin\PortfolioSectionSettingController;
 |
 */
 
+/** Frontend Routes */
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
@@ -39,12 +41,11 @@ Route::get('blogs', [HomeController::class, 'blog'])->name('blog');
 
 Route::get('blog-details/{id}', [HomeController::class, 'showBlog'])->name('show.blog');
 
-
-Route::get('/portfolio', function () {
-    return view('frontend.pages.portfolio');
-});
+Route::get('portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+Route::post('contact', [HomeController::class, 'contact'])->name('contact');
 
 
+/** Admin Routes */
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -100,4 +101,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'admin', 'as' =>
 
     /** Blog Section Setting Route */
     Route::resource('blog-section-setting', BlogSectionSettingController::class);
+
+    /** Contact Section Setting Route */
+    Route::resource('contact-section-setting', ContactSectionSettingController::class);
 });
