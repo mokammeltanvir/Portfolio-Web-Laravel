@@ -5,7 +5,7 @@
 <section class="section">
     <div class="section-header">
       <div class="section-header-back">
-        <a href="features-posts.html" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+        <a href="{{route('admin.settings.index')}}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
       </div>
       <h1>General Setting</h1>
 
