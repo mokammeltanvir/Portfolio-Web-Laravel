@@ -66,8 +66,9 @@ class HomeController extends Controller
 
     public function portfolio()
     {
+        $portfolioCategories = Category::all();
         $portfolioItems = PortfolioItem::latest()->get();
-        return view('frontend.pages.portfolio', compact('portfolioItems'));
+        return view('frontend.pages.portfolio', compact('portfolioCategories', 'portfolioItems'));
     }
 
 
